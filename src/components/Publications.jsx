@@ -22,7 +22,7 @@ const Publications = () => {
             authors: ['Dr. T. T. Tamilarasi', 'Guru Prasath A', 'et al.'],
             meta: {
                 publishedIn: '3rd International Conference on Intelligent Data Communication Technologies and Internet of Things (IDCIoT 2025)',
-                pages: '1029–1034',
+                pages: '1029-1034',
                 doi: '10.1109/IDCIOT64235.2025.10914950',
                 date: 'July 2025'
             },

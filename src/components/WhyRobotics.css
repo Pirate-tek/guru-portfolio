@@ -11,10 +11,10 @@
 }
 
 .why-robotics-card {
-    max-width: 800px;
+    /* match internship card */
     width: 100%;
     background: var(--color-washi);
-    padding: 50px;
+    padding: 40px;
     border-radius: 4px;
     /* Slightly sharper for a technical feel, but still soft */
     box-shadow:
@@ -22,7 +22,6 @@
         0 1px 3px rgba(0, 0, 0, 0.02);
     position: relative;
     border-left: 4px solid var(--accent-secondary);
-    /* Accent border */
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     overflow: hidden;
 }
