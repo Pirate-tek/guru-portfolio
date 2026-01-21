@@ -1,0 +1,109 @@
+/* src/components/WhyRobotics.css */
+
+.why-robotics-section {
+    padding: 80px 20px;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.why-robotics-card {
+    max-width: 800px;
+    width: 100%;
+    background: var(--color-washi);
+    padding: 50px;
+    border-radius: 4px;
+    /* Slightly sharper for a technical feel, but still soft */
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.04),
+        0 1px 3px rgba(0, 0, 0, 0.02);
+    position: relative;
+    border-left: 4px solid var(--accent-secondary);
+    /* Accent border */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+}
+
+.why-robotics-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(79, 93, 82, 0.1);
+}
+
+.why-robotics-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(47, 51, 48, 0.08);
+    padding-bottom: 15px;
+}
+
+.why-robotics-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--color-sumi);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.why-robotics-icon {
+    color: var(--accent-primary);
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+    transition: transform 0.5s ease;
+}
+
+.why-robotics-card:hover .why-robotics-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.why-robotics-text {
+    font-family: var(--font-main);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* Faint Kanji Background - kept subtle */
+.why-robotics-card::before {
+    content: "機";
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-family: var(--font-display);
+    font-size: 180px;
+    color: var(--accent-secondary);
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+    transform: rotate(10deg);
+}
+
+@media (min-width: 1024px) {
+    .why-robotics-card {
+        padding: 60px;
+    }
+
+    .why-robotics-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-robotics-card {
+        padding: 30px;
+    }
+
+    .why-robotics-title {
+        font-size: 1.8rem;
+    }
+
+    .why-robotics-text {
+        font-size: 1rem;
+    }
+}

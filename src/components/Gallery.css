@@ -1,0 +1,66 @@
+.gallery-section {
+    /* Transparent to show Kanji background */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 10px 10px 40px 10px;
+    /* Polaroid style padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    transform: rotate(var(--rotation, 0deg));
+}
+
+.gallery-item:nth-child(odd) {
+    --rotation: -2deg;
+}
+
+.gallery-item:nth-child(even) {
+    --rotation: 2deg;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: sepia(20%);
+}
+
+.gallery-item:hover .gallery-image {
+    filter: sepia(0%);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.polaroid-caption span {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
