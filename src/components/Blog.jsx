@@ -4,23 +4,19 @@ import './Blog.css';
 const Blog = () => {
     const blogs = [
         {
-            title: 'The Future of Swarm Robotics',
-            date: 'October 15, 2023',
-            category: 'Robotics',
-            excerpt: 'Exploring how decentralized systems can revolutionize agriculture and disaster relief.'
-        },
-        {
-            title: 'Finding Meaning in the Machine',
-            date: 'September 28, 2023',
+            title: 'The ability to ask right questions will leads to actual progress',
+            date: 'Jan 3rd 2026',
             category: 'Personal',
-            excerpt: 'Reflections on the intersection of philosophy and artificial intelligence.'
+            excerpt: 'Know the Why When How.....'
         },
+
         {
-            title: 'Building a Digital Twin with ROS2',
-            date: 'August 10, 2023',
-            category: 'Technical',
-            excerpt: 'A step-by-step guide to simulating real-world manufacturing environments.'
-        }
+            title: 'When the code frustates you, sketch the concept instead. The insight hides in shapes',
+            date: 'Nov 29th 2025',
+            category: 'Personal',
+            excerpt: 'Step back from clutter, Clarity emerges......'
+        },
+
     ];
 
     return (
@@ -37,7 +33,6 @@ const Blog = () => {
                                 </div>
                                 <h3 className="blog-title">{blog.title}</h3>
                                 <p className="blog-excerpt">{blog.excerpt}</p>
-                                <a href="#" className="read-more">Read Article &rarr;</a>
                             </div>
                         </div>
                     ))}

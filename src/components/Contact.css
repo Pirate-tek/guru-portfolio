@@ -136,6 +136,27 @@
     /* Seaweed Green */
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(79, 93, 82, 0.2);
+    box-shadow: 0 5px 15px rgba(79, 93, 82, 0.2);
+}
+
+.form-status {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.form-status.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #2e7d32;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.form-status.error {
+    background-color: rgba(211, 47, 47, 0.1);
+    color: #c62828;
+    border: 1px solid rgba(211, 47, 47, 0.2);
 }
 
 @media (max-width: 768px) {

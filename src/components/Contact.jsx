@@ -1,7 +1,62 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
+    const form = useRef();
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+    const [isSending, setIsSending] = useState(false);
+    const [status, setStatus] = useState(null); // { type: 'success' | 'error', message: string }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsSending(true);
+        setStatus(null);
+
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        if (!serviceId || !templateId || !publicKey) {
+            setStatus({
+                type: 'error',
+                message: 'EmailJS configuration is missing. Please check your .env file.'
+            });
+            setIsSending(false);
+            return;
+        }
+
+        emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+            .then((result) => {
+                setStatus({
+                    type: 'success',
+                    message: 'Message sent successfully! I will get back to you soon.'
+                });
+                setFormData({ name: '', email: '', message: '' });
+            }, (error) => {
+                console.error('EmailJS Error:', error);
+                setStatus({
+                    type: 'error',
+                    message: 'Failed to send message. Please try again later.'
+                });
+            })
+            .finally(() => {
+                setIsSending(false);
+            });
+    };
+
     return (
         <section id="contact" className="section contact-section">
             <div className="container contact-container">
@@ -33,17 +88,47 @@ const Contact = () => {
                             </a>
                         </div>
                     </div>
-                    <form className="contact-form">
+                    <form className="contact-form" ref={form} onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <input type="text" placeholder="Your Name" required />
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your Name"
+                                required
+                                value={formData.name}
+                                onChange={handleChange}
+                            />
                         </div>
                         <div className="form-group">
-                            <input type="email" placeholder="Your Email" required />
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Your Email"
+                                required
+                                value={formData.email}
+                                onChange={handleChange}
+                            />
                         </div>
                         <div className="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <textarea
+                                name="message"
+                                placeholder="Your Message"
+                                rows="5"
+                                required
+                                value={formData.message}
+                                onChange={handleChange}
+                            ></textarea>
                         </div>
-                        <button type="submit" className="btn">Send Message</button>
+
+                        {status && (
+                            <div className={`form-status ${status.type}`}>
+                                {status.message}
+                            </div>
+                        )}
+
+                        <button type="submit" className="btn" disabled={isSending}>
+                            {isSending ? 'Sending...' : 'Send Message'}
+                        </button>
                     </form>
                 </div>
             </div>

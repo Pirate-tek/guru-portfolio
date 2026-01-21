@@ -4,15 +4,15 @@ import './Skills.css';
 const AOI = () => {
     const aoiCategories = [
         {
-            title: 'Mechanics',
-            skills: ['Mobile Robots', 'Manipulators', 'SLAM', 'Navigation', 'Control Systems']
-        },
-        {
-            title: 'Digital Circuits',
-            skills: ['Full Stack Web', 'Embedded Systems', 'System Architecture', 'Open Source']
+            title: 'Kinematics',
+            skills: ['Forward & Inverse Kinematics', 'Mobile Robot Kinematics', 'Manipulators', 'Workspace Analysis']
         },
         {
             title: 'Control System',
+            skills: ['PID Control', 'LQR Control', 'Model Predictive Control', 'Kalman Filter']
+        },
+        {
+            title: 'Robot Perception',
             skills: ['Computer Vision', 'Deep Learning', 'Sensor Fusion', 'Object Detection']
         },
 

@@ -5,15 +5,11 @@ const Skills = () => {
     const skillCategories = [
         {
             title: 'Software',
-            skills: ['Python', 'C++', 'ROS2', 'Linux', 'Gazebo', 'Git', 'React', 'Debugging']
-        },
-        {
-            title: 'Hardware',
-            skills: ['Arduino', 'ESP', 'Raspberry Pi', 'Protocols', 'Sensors', 'Calibration', 'Actuators']
+            skills: ['ROS2', 'C++', 'Python', 'Linux', 'Gazebo', 'Arduino', 'ESP', 'Raspberry Pi', 'PWM Control', 'Interfacing', 'Git', 'React', 'Debugging', 'Calibration']
         },
         {
             title: 'Cognitive',
-            skills: ['Design Thinking', 'System Analysis', 'Research', 'Storytelling']
+            skills: ['Design Thinking', 'System Analysis', 'Research', 'Storytelling', 'Team Player']
         },
     ];
 
