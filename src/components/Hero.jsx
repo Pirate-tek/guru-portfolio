@@ -8,7 +8,7 @@ const Hero = () => {
             <div className="container hero-container">
                 <div className="hero-content">
                     <h1 className="hero-title">Guru Prasath.A</h1>
-                    <p className="hero-tagline">Mechatronics Engineer | Aspiring Robotics </p>
+                    <p className="hero-tagline">Mechatronics Engineer | <span className="tagline-break">Aspiring Robotics</span></p>
                     <div className="hero-description">
                         <p>
                             A curious, self-driven individual passionate about exploring Robotics and eager to apply learnt concepts, craving stimulation through challenges and valuing personal growth and a satisfied life.

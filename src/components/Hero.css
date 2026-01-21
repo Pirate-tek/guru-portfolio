@@ -154,6 +154,10 @@
         font-size: 3rem;
     }
 
+    .tagline-break {
+        display: block;
+    }
+
     .hero-description {
         margin: 0 auto 40px;
     }
