@@ -14,7 +14,7 @@ import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
-import ChatWidget from './components/Chat/ChatWidget';
+//import ChatWidget from './components/Chat/ChatWidget';
 
 import KanjiBackground from './components/KanjiBackground';
 
@@ -36,7 +36,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-      <ChatWidget />
+      {/* <ChatWidget /> */}
     </div>
   );
 }

@@ -189,6 +189,7 @@
 
     .profile-image {
         /* Reduce fade on mobile if needed, or keep consistent */
+        width: 100%;
         mask-image: linear-gradient(to bottom,
                 black 0%,
                 black 70%,
