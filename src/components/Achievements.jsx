@@ -33,12 +33,17 @@ const Achievements = () => {
             organizer: 'Organized by Hosur Forest Division in collabration with FORGE',
             date: 'March 2024',
             description: 'Banraw',
-            images: [forge1, forge2]
+            images: [
+                { src: forge1, style: { objectPosition: '20% center' } },
+                forge2
+            ]
         }
     ];
 
     const openLightbox = (img) => {
-        setSelectedImage(img);
+        // Handle both string and object image formats
+        const imgSrc = typeof img === 'string' ? img : img.src;
+        setSelectedImage(imgSrc);
         document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
     };
 
@@ -62,11 +67,22 @@ const Achievements = () => {
                                 <div className="achievement-date">{item.date}</div>
                             </div>
                             <div className="achievement-gallery">
-                                {item.images.map((img, idx) => (
-                                    <div key={idx} className="achievement-image-wrapper" onClick={() => openLightbox(img)}>
-                                        <img src={img} alt={`${item.title} ${idx + 1}`} loading="lazy" />
-                                    </div>
-                                ))}
+                                {item.images.map((imgItem, idx) => {
+                                    const isObject = typeof imgItem === 'object' && imgItem !== null;
+                                    const src = isObject ? imgItem.src : imgItem;
+                                    const style = isObject ? imgItem.style : {};
+
+                                    return (
+                                        <div key={idx} className="achievement-image-wrapper" onClick={() => openLightbox(imgItem)}>
+                                            <img
+                                                src={src}
+                                                alt={`${item.title} ${idx + 1}`}
+                                                loading="lazy"
+                                                style={style}
+                                            />
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </div>
                     ))}

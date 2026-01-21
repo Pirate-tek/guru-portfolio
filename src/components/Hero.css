@@ -44,13 +44,13 @@
     color: var(--text-color);
     opacity: 0.85;
     margin-bottom: 40px;
-    max-width: 500px;
+    max-width: 550px;
     line-height: 1.8;
 }
 
 @media (min-width: 1024px) {
     .hero-description p {
-        max-width: 75ch;
+        max-width: 70ch;
         /* approx three lines on desktop */
     }
 }
@@ -98,7 +98,7 @@
 .profile-image-container {
     position: relative;
     width: auto;
-    max-width: 450px;
+    max-width: 700px;
     /* Human-sized */
     padding: 0;
     background: transparent;
@@ -113,7 +113,7 @@
 }
 
 .profile-image {
-    width: 100%;
+    width: 137%;
     height: auto;
     display: block;
     object-fit: contain;
@@ -183,7 +183,7 @@
 
     .profile-image-container {
         width: 100%;
-        max-width: 350px;
+        max-width: 400px;
         margin: 0 auto;
     }
 
