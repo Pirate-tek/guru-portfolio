@@ -9,7 +9,7 @@ const Projects = () => {
         company: 'Karthikesh Robotics',
         duration: 'Oct - Dec 2025',
         summary: ' This internship was the result of consistent effort to self-learn ROS2 by the passion to become a robotics developer. The earned opportunity to contribute at KKR provided me right path with structure to develop my knowledge further. Being greatful to the stepping stone of my career.',
-        subProjects: [  
+        subProjects: [
             {
                 title: 'BUMPY - Indoor AMR',
                 problemStatement: 'Indoor autonomous navigation with custom hardware control.',
