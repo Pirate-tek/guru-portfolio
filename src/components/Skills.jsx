@@ -5,7 +5,7 @@ const Skills = () => {
     const skillCategories = [
         {
             title: 'HANDY IN',
-            skills: ['ROS2', 'C++', 'Python', 'Linux', 'Gazebo', 'Arduino', 'ESP', 'Raspberry Pi', 'PWM Control', 'Interfacing', 'Git', 'React', 'Debugging', 'Calibration']
+            skills: ['ROS2', 'C++', 'Python', 'Linux', 'Gazebo', 'Raspberry Pi', 'Arduino', 'ESP', 'PWM Control', 'Interfacing', 'Git', 'React', 'Debugging', 'Calibration']
         },
         {
             title: 'CORE COMPETENCY',
