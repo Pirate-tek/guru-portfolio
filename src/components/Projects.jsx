@@ -9,7 +9,7 @@ const Projects = () => {
         company: 'Karthikesh Robotics',
         duration: 'Oct - Dec 2025',
         summary: ' This internship was the result of consistent effort to self-learn ROS2 by the passion to become a robotics developer. The earned opportunity to contribute at KKR provided me right path with structure to develop my knowledge further. Being greatful to the stepping stone of my career.',
-        subProjects: [  
+        subProjects: [
             {
                 title: 'BUMPY - Indoor AMR',
                 problemStatement: 'Indoor autonomous navigation with custom hardware control.',
@@ -52,7 +52,7 @@ const Projects = () => {
             title: 'NEERIN THARAM',
             description: 'Personalized Water Quality Monitoring Kit. Portable, low-cost testing for rural areas.',
             techStack: ['Embedded Systems', 'Sensors', 'Colorimetry'],
-            link: '#',
+            outcome: 'Created a web-based control interface for real-time robot monitoring and command execution.',
             details: {
                 role: 'Team Lead',
                 context: 'Smart India Hackathon 2024',
@@ -64,7 +64,6 @@ const Projects = () => {
             title: 'CORTIVUE',
             description: 'Wearable Mental Health Monitoring Glass. Real-time stress detection and adaptive regulation.',
             techStack: ['ESP32', 'Python', 'OpenCV', 'AI'],
-            link: '#',
             details: {
                 role: 'Inventor & Lead Developer',
                 context: 'Personal Innovation Project',
@@ -76,7 +75,6 @@ const Projects = () => {
             title: 'WAKENS',
             description: 'IAQ-Based Smart Fan & AC Control System. Autonomous indoor air quality monitoring.',
             techStack: ['IoT', 'Cloud', 'Voice Assistants'],
-            link: '#',
             details: {
                 role: 'IoT Developer',
                 context: 'SIH Internal Selection',
@@ -135,7 +133,14 @@ const Projects = () => {
 
                     <div className="internship-panels">
                         {internship.subProjects.map((sub, index) => (
-                            <div key={index} className="internship-panel" onClick={() => openModal(sub, 'internship')}>
+                            <div
+                                key={index}
+                                className="internship-panel"
+                                onClick={() => openModal(sub, 'internship')}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && openModal(sub, 'internship')}
+                            >
                                 <h4 className="panel-title">{sub.title}</h4>
                                 <p className="panel-problem">{sub.problemStatement}</p>
                                 <div className="panel-tech">
@@ -152,7 +157,14 @@ const Projects = () => {
                 {/* Additional Projects Grid */}
                 <div className="projects-grid additional-projects">
                     {additionalProjects.map((project, index) => (
-                        <div key={index} className="project-card">
+                        <div
+                            key={index}
+                            className="project-card"
+                            onClick={() => openModal(project)}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && openModal(project)}
+                        >
                             <div className="project-content">
                                 <h3 className="project-title">{project.title}</h3>
                                 <p className="project-description">{project.description}</p>
@@ -161,7 +173,6 @@ const Projects = () => {
                                         <span key={idx} className="project-tag">{tag}</span>
                                     ))}
                                 </div>
-                                <button onClick={() => openModal(project)} className="project-link">View Details &rarr;</button>
                             </div>
                         </div>
                     ))}
@@ -174,6 +185,11 @@ const Projects = () => {
                         <button className="project-modal-close" onClick={closeModal}>&times;</button>
                         <h3 className="modal-title">{selectedProject.title}</h3>
                         <p className="modal-context">{selectedProject.context}</p>
+
+                        <div className="modal-section">
+                            <h4>DESCRIPTION</h4>
+                            <p>{selectedProject.description}</p>
+                        </div>
 
                         {/* Conditionally hide Role & Responsibility for internship subprojects */}
                         {!selectedProject.isInternship && (

@@ -1,36 +1,32 @@
 import React from 'react';
-import './Skills.css';
+import { FaRobot, FaCogs, FaEye } from 'react-icons/fa';
+import './AOI.css';
 
 const AOI = () => {
     const aoiCategories = [
         {
             title: 'Kinematics',
-            skills: ['Forward & Inverse Kinematics', 'Mobile Robot Kinematics', 'Manipulators', 'Workspace Analysis']
+            description: '"Love for physics drew me into exploring Mechanics"',
         },
         {
-            title: 'Control System',
-            skills: ['PID Control', 'LQR Control', 'Model Predictive Control', 'Kalman Filter']
+            title: 'Control Systems',
+            description: '"Passion to build intelligent system "',
         },
         {
             title: 'Robot Perception',
-            skills: ['Computer Vision', 'Deep Learning', 'Sensor Fusion', 'Object Detection']
+            description: '"Lured by the curiosity to understand how robots able to see and interpret the world."',
         },
-
     ];
 
     return (
-        <section id="aoi" className="section skills-section">
+        <section id="aoi" className="section aoi-section">
             <div className="container">
                 <h2 className="section-title">Areas of Interest</h2>
-                <div className="skills-grid">
+                <div className="aoi-grid">
                     {aoiCategories.map((category, index) => (
-                        <div key={index} className="skill-category">
-                            <h3 className="category-title">{category.title}</h3>
-                            <div className="skill-tags">
-                                {category.skills.map((skill, idx) => (
-                                    <span key={idx} className="skill-tag">{skill}</span>
-                                ))}
-                            </div>
+                        <div key={index} className="aoi-card">
+                            <h3 className="aoi-title">{category.title}</h3>
+                            <p className="aoi-description">{category.description}</p>
                         </div>
                     ))}
                 </div>

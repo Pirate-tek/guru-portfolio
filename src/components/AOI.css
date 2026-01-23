@@ -1,0 +1,125 @@
+/* AOI Section - Story Driven & Japanese Minimal Theme */
+.aoi-section {
+    padding: 80px 0;
+    background-color: transparent;
+}
+
+.aoi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    /* Increased gap for better separation */
+    margin-top: 3rem;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+    .aoi-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .aoi-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+}
+
+/* Card Styling - Story & Washi Aesthetic */
+.aoi-card {
+    background-color: rgba(138, 154, 91, 0.08);
+    /* Pale Mint Green (Matcha tint) */
+    border-radius: 1rem;
+    /* Rounded corners (2xl approx) */
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(138, 154, 91, 0.1);
+    /* Subtle green border */
+
+    /* Soft ambient shadow */
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.03),
+        inset 0 0 30px rgba(255, 255, 255, 0.4);
+    /* Inner glow */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Left align for story feel */
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Hover Effect - Scale & Intensify */
+.aoi-card:hover {
+    transform: scale(1.02) translateY(-4px);
+    box-shadow:
+        0 15px 30px rgba(47, 51, 48, 0.08),
+        /* Deeper shadow */
+        inset 0 0 0 1px var(--color-matcha);
+    /* Border highlight */
+    background-color: rgba(138, 154, 91, 0.12);
+    /* Slightly richer mint */
+}
+
+/* Icon Styling */
+.aoi-icon-wrapper {
+    font-size: 2.5rem;
+    color: var(--color-matcha);
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s ease, color 0.3s ease;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 12px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.aoi-card:hover .aoi-icon-wrapper {
+    transform: rotate(10deg) scale(1.1);
+    color: var(--accent-secondary);
+    /* Darker green on hover */
+    background: #fff;
+}
+
+/* Typography */
+.aoi-title {
+    font-family: var(--font-display);
+    /* Zen Old Mincho */
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-sumi);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.aoi-description {
+    font-family: var(--font-main);
+    /* Inter */
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-seaweed);
+    font-style: italic;
+    /* Quote feel */
+    opacity: 0.9;
+    position: relative;
+}
+
+/* Optional decorative quote mark */
+.aoi-description::before {
+    content: '“';
+    font-family: serif;
+    font-size: 3rem;
+    color: var(--color-matcha);
+    opacity: 0.2;
+    position: absolute;
+    top: -1.5rem;
+    left: -1rem;
+    line-height: 1;
+}

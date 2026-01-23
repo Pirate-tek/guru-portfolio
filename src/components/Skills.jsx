@@ -4,12 +4,12 @@ import './Skills.css';
 const Skills = () => {
     const skillCategories = [
         {
-            title: 'Software',
+            title: 'HANDY IN',
             skills: ['ROS2', 'C++', 'Python', 'Linux', 'Gazebo', 'Arduino', 'ESP', 'Raspberry Pi', 'PWM Control', 'Interfacing', 'Git', 'React', 'Debugging', 'Calibration']
         },
         {
-            title: 'Cognitive',
-            skills: ['Design Thinking', 'System Analysis', 'Research', 'Storytelling', 'Team Player']
+            title: 'CORE COMPETENCY',
+            skills: ['System Understanding', 'Design Thinking', 'Research', 'Storytelling', 'Team Player', 'Optimistic', 'Persistance']
         },
     ];
 

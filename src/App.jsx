@@ -27,7 +27,7 @@ function App() {
         <Hero />
         <WhyRobotics />
         <Skills />
-        <AOI />
+        {/*<AOI />*/}
         <Projects />
         <Achievements />
         <Publications />
