@@ -4,48 +4,83 @@ import './Projects.css';
 const Projects = () => {
     const [selectedProject, setSelectedProject] = React.useState(null);
 
-    const internship = {
-        role: 'Internship - ROS2 Developer',
-        company: 'Karthikesh Robotics',
-        duration: 'Oct - Dec 2025',
-        summary: ' This internship was the result of consistent effort to self-learn ROS2 by the passion to become a robotics developer. The earned opportunity to contribute at KKR provided me right path with structure to develop my knowledge further. Being greatful to the stepping stone of my career.',
-        subProjects: [
-            {
-                title: 'BUMPY - Indoor AMR',
-                problemStatement: 'Indoor autonomous navigation with custom hardware control.',
-                techStack: ['Nav2', 'LiDAR', 'SLAM', 'Raspberry Pi'],
-                outcome: 'Developed a full-stack ROS2 solution for indoor navigation including SLAM, path planning, and custom hardware interfacing.',
-                fullDetails: {
-                    description: 'Designed and deployed a ROS2-based differential drive mobile robot capable of indoor autonomous navigation.',
-                    role: 'Full Stack Robotics Developer',
-                    outcomes: ['Built complete ROS2 navigation stack', 'Implemented SLAM and path planning', 'Integrated custom hardware with ros2_control'],
-                    experienceGained: ['Custom ROS2 hardware control', 'TF tree management']
+    const internships = [
+        {
+            role: 'ROS2 Developer Internship',
+            company: 'RobotoAI',
+            duration: 'Mar - May 2026',
+            summary: 'Worked on advanced ROS2 fleet coordination, custom behavior tree planning systems, and closed-loop control systems. Focused on middleware and low-level control systems integration.',
+            subProjects: [
+                {
+                    title: 'RMF Fleet Simulation System',
+                    problemStatement: 'Refactoring single-robot simulation stack to support multi-robot namespaces and fleet coordination.',
+                    techStack: ['RMF', 'Nav2', 'ROS2', 'URDF'],
+                    outcome: 'Handled TF, namespaced URDFs, topics, and Nav2 parameters for 5 robots, integrating them with RMF via a custom fleet adapter.',
+                    fullDetails: {
+                        description: 'Refactored a single robot simulation stack to handle a 5-robot fleet\'s TF tree, namespaced URDFs, topics, and Nav2 parameters. Implemented multi-robot coordination using a custom fleet adapter bridging RMF and Nav2 based on traffic maps.',
+                        role: 'ROS2 / RMF Developer',
+                        outcomes: ['Refactored single-robot stack to multi-robot namespace', 'Enabled multi-robot navigation using RMF traffic maps', 'Implemented custom RMF fleet adapter'],
+                        experienceGained: ['RMF (Robotics Middleware Framework)', 'Multi-robot coordinate systems', 'Fleet management']
+                    }
+                },
+                {
+                    title: 'Custom BT Action Plugin',
+                    problemStatement: 'Elevating navigation pause/resume behaviors to a preemptible action server condition.',
+                    techStack: ['Behavior Trees', 'ROS2', 'C++'],
+                    outcome: 'Designed a custom Behavior Tree node to hold navigation and give mission planners external control over task execution.',
+                    fullDetails: {
+                        description: 'Designed and implemented a custom ROS2 Behavior Tree action node (WaitActionServerCondition) that allows pause/resume tasks to be managed as preemptible actions.',
+                        role: 'C++ Developer',
+                        outcomes: ['Implemented custom Behavior Tree nodes', 'Returned RUNNING state to pause navigation', 'Empowered mission planners with external navigation control'],
+                        experienceGained: ['Behavior Trees in ROS2', 'Preemptible action servers', 'Task scheduling']
+                    }
+                },
+                {
+                    title: 'ROS 2 Control Bridge',
+                    problemStatement: 'Interfacing ros2_control with a custom differential drive setup on a DC encoder motor.',
+                    techStack: ['ros2_control', 'C++', 'Kinematics', 'Joint Control'],
+                    outcome: 'Co-developed a position-based controller plugin with closed-loop feedback.',
+                    fullDetails: {
+                        description: 'Co-developed a custom ros2_control position-based differential-drive controller plugin in C++ for a DC encoder motor.',
+                        role: 'Control Systems Developer',
+                        outcomes: ['Co-developed ros2_control position-based plugin', 'Implemented inverse kinematics for wheel angles calculation', 'Integrated closed-loop joint feedback'],
+                        experienceGained: ['ros2_control plugin development', 'Inverse kinematics', 'Closed-loop control systems']
+                    }
                 }
-            },
-            {
-                title: 'Multi-Robot Navigation Experiment',
-                problemStatement: 'Coordinated navigation of multiple robots in shared space.',
-                techStack: ['URDF', 'Multi robot control'],
-                outcome: 'Implemented multi-robot navigation with collision avoidance using ROS2.',
-                fullDetails: {
-                    description: 'Developed multi-robot navigation capabilities with collision avoidance in ROS2.',
-                    outcomes: ['Enabled coordinated multi-robot navigation', 'Implemented collision avoidance strategies'],
-                    experienceGained: ['Multi-robot systems', 'Collision avoidance algorithms']
+            ]
+        },
+        {
+            role: 'Internship - ROS2 Developer',
+            company: 'Karthikesh Robotics',
+            duration: 'Oct - Dec 2025',
+            summary: ' This internship was the result of consistent effort to self-learn ROS2 by the passion to become a robotics developer. The earned opportunity to contribute at KKR provided me right path with structure to develop my knowledge further. Being greatful to the stepping stone of my career.',
+            subProjects: [
+                {
+                    title: 'BUMPY - Indoor AMR',
+                    problemStatement: 'Indoor autonomous navigation with custom hardware control.',
+                    techStack: ['Nav2', 'LiDAR', 'SLAM', 'Raspberry Pi'],
+                    outcome: 'Developed a full-stack ROS2 solution for indoor navigation including SLAM, path planning, and custom hardware interfacing.',
+                    fullDetails: {
+                        description: 'Designed and deployed a ROS2-based differential drive mobile robot capable of indoor autonomous navigation.',
+                        role: 'Full Stack Robotics Developer',
+                        outcomes: ['Built complete ROS2 navigation stack', 'Implemented SLAM and path planning', 'Integrated custom hardware with ros2_control'],
+                        experienceGained: ['Custom ROS2 hardware control', 'TF tree management']
+                    }
+                },
+                {
+                    title: 'Web Control Interface',
+                    problemStatement: 'Remote monitoring and control of ROS2 robots via web interface.',
+                    techStack: ['ROS2', 'React', 'Java', 'WebSocket'],
+                    outcome: 'Created a web-based control interface for real-time robot monitoring and command execution.',
+                    fullDetails: {
+                        description: 'Built a web interface for remote control and monitoring of ROS2 robots using React and WebSocket communication.',
+                        outcomes: ['Developed real-time web control interface', 'Integrated WebSocket communication with ROS2'],
+                        experienceGained: ['Web-based robotics control', 'Real-time data streaming']
+                    }
                 }
-            },
-            {
-                title: 'Web Control Interface',
-                problemStatement: 'Remote monitoring and control of ROS2 robots via web interface.',
-                techStack: ['ROS2', 'React', 'Java', 'WebSocket'],
-                outcome: 'Created a web-based control interface for real-time robot monitoring and command execution.',
-                fullDetails: {
-                    description: 'Built a web interface for remote control and monitoring of ROS2 robots using React and WebSocket communication.',
-                    outcomes: ['Developed real-time web control interface', 'Integrated WebSocket communication with ROS2'],
-                    experienceGained: ['Web-based robotics control', 'Real-time data streaming']
-                }
-            }
-        ]
-    };
+            ]
+        }
+    ];
 
     const additionalProjects = [
         {
@@ -84,11 +119,11 @@ const Projects = () => {
         }
     ];
 
-    const openModal = (project, type = 'standard') => {
+    const openModal = (project, type = 'standard', currentInternship = null) => {
         // Normalize data for modal
         const modalData = type === 'internship' ? {
             title: project.title,
-            context: internship.company + ' - ' + internship.role,
+            context: (currentInternship ? currentInternship.company : '') + ' - ' + (currentInternship ? currentInternship.role : ''),
             role: project.fullDetails.role,
             techStack: project.techStack,
             outcomes: project.fullDetails.outcomes,
@@ -120,39 +155,41 @@ const Projects = () => {
             <div className="container">
                 <h2 className="section-title">Creations & Experiments</h2>
 
-                {/* Internship Card */}
-                <div className="internship-card">
-                    <div className="internship-header">
-                        <div className="internship-info">
-                            <span className="internship-role">{internship.role}</span>
-                            <h3 className="internship-company">{internship.company}</h3>
-                        </div>
-                        <span className="internship-duration">{internship.duration}</span>
-                    </div>
-                    <p className="internship-summary">{internship.summary}</p>
-
-                    <div className="internship-panels">
-                        {internship.subProjects.map((sub, index) => (
-                            <div
-                                key={index}
-                                className="internship-panel"
-                                onClick={() => openModal(sub, 'internship')}
-                                role="button"
-                                tabIndex={0}
-                                onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && openModal(sub, 'internship')}
-                            >
-                                <h4 className="panel-title">{sub.title}</h4>
-                                <p className="panel-problem">{sub.problemStatement}</p>
-                                <div className="panel-tech">
-                                    {sub.techStack.map((tech, idx) => (
-                                        <span key={idx} className="tech-dot">{tech}</span>
-                                    ))}
-                                </div>
-                                <p className="panel-outcome">{sub.outcome}</p>
+                {/* Internship Cards */}
+                {internships.map((internship, intIdx) => (
+                    <div key={intIdx} className="internship-card">
+                        <div className="internship-header">
+                            <div className="internship-info">
+                                <span className="internship-role">{internship.role}</span>
+                                <h3 className="internship-company">{internship.company}</h3>
                             </div>
-                        ))}
+                            <span className="internship-duration">{internship.duration}</span>
+                        </div>
+                        <p className="internship-summary">{internship.summary}</p>
+
+                        <div className="internship-panels">
+                            {internship.subProjects.map((sub, index) => (
+                                <div
+                                    key={index}
+                                    className="internship-panel"
+                                    onClick={() => openModal(sub, 'internship', internship)}
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && openModal(sub, 'internship', internship)}
+                                >
+                                    <h4 className="panel-title">{sub.title}</h4>
+                                    <p className="panel-problem">{sub.problemStatement}</p>
+                                    <div className="panel-tech">
+                                        {sub.techStack.map((tech, idx) => (
+                                            <span key={idx} className="tech-dot">{tech}</span>
+                                        ))}
+                                    </div>
+                                    <p className="panel-outcome">{sub.outcome}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                ))}
 
                 {/* Additional Projects Grid */}
                 <div className="projects-grid additional-projects">
