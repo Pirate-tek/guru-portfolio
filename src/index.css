@@ -1,35 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Japanese Green Color Palette */
-  --color-sumi: #2F3330;
-  /* Dark Charcoal / Text */
-  --color-rice: #F0F2E9;
-  /* Warm light green-white / Background */
-  --color-matcha: #8A9A5B;
-  /* Primary Green */
-  --color-seaweed: #4F5D52;
-  /* Secondary Dark Green / Accents */
-  --color-moss: #D4D9C8;
-  /* Light Moss / Subtle Highlights */
-  --color-washi: #E6E8E0;
-  /* Textured Paper Tone */
-  --color-clay: #8C7060;
-  /* Warm Earthy Accent (optional) */
+  /* Red Bull F1 Champion Color Palette */
+  --rb-dark-chassis: #050B14;
+  --rb-carbon-card: #0D1626;
+  --rb-navy-accent: #172A46;
+  --rb-crimson-red: #FF1801;
+  --rb-gold-yellow: #FFCC00;
+  --rb-telemetry-cyan: #00E5FF;
+  --rb-text-main: #FFFFFF;
+  --rb-text-muted: #94A3B8;
 
   /* Functional Mappings */
-  --bg-color: var(--color-rice);
-  --text-color: var(--color-sumi);
-  --accent-primary: var(--color-matcha);
-  --accent-secondary: var(--color-seaweed);
-  --accent-tertiary: var(--color-moss);
-  --card-bg: #FFFFFF;
-  --card-bg-alt: var(--color-washi);
-  --border-color: rgba(47, 51, 48, 0.1);
+  --bg-color: var(--rb-dark-chassis);
+  --text-color: var(--rb-text-main);
+  --accent-primary: var(--rb-crimson-red);
+  --accent-secondary: var(--rb-gold-yellow);
+  --accent-tertiary: var(--rb-telemetry-cyan);
+  --card-bg: var(--rb-carbon-card);
+  --card-bg-alt: #111C2E;
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  /* Legacy color aliases mapped to Red Bull palette */
+  --color-sumi: #FFFFFF;
+  --color-rice: #050B14;
+  --color-matcha: #FF1801;
+  --color-seaweed: #FFCC00;
+  --color-moss: #172A46;
+  --color-washi: #0D1626;
+  --color-clay: #00E5FF;
 
   /* Typography */
   --font-main: 'Inter', sans-serif;
-  --font-display: 'Zen Old Mincho', serif;
+  --font-display: 'Teko', sans-serif;
+  --font-tech: 'Chakra Petch', sans-serif;
 }
 
 * {
@@ -45,8 +49,11 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   transition: background-color 0.5s ease, color 0.5s ease;
-  /* Subtle paper texture effect */
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  /* Red Bull racing background grid */
+  background-image: 
+    linear-gradient(135deg, rgba(255, 24, 1, 0.05) 0%, transparent 40%),
+    linear-gradient(225deg, rgba(255, 204, 0, 0.05) 0%, transparent 40%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23172a46' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 h1,
@@ -57,8 +64,9 @@ h5,
 h6 {
   font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 a {
@@ -92,7 +100,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-matcha);
+  background: var(--accent-primary);
   border-radius: 4px;
 }
 
@@ -112,7 +120,7 @@ button {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 60px;
   text-align: center;
   position: relative;
@@ -120,39 +128,39 @@ button {
   left: 50%;
   transform: translateX(-50%);
   color: var(--text-color);
+  letter-spacing: 2px;
 }
 
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -15px;
+  bottom: -12px;
   left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background-color: var(--color-sumi);
-  border-radius: 50%;
-  /* Tapered ends like a brush stroke */
-  opacity: 0.8;
+  transform: translateX(-50%) skewX(-20deg);
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--rb-crimson-red), var(--rb-gold-yellow));
+  border-radius: 2px;
+  opacity: 0.9;
 }
 
 .btn {
   display: inline-block;
   padding: 12px 30px;
-  background-color: var(--accent-primary);
+  background: linear-gradient(135deg, var(--rb-crimson-red), #C00000);
   color: #fff;
-  font-weight: 500;
-  border-radius: 2px;
-  /* Slightly rounded, not full pill */
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 10px rgba(215, 86, 90, 0.2);
-  letter-spacing: 0.05em;
+  font-family: var(--font-tech);
+  font-weight: 700;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 24, 1, 0.4);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .btn:hover {
-  background-color: var(--accent-secondary);
+  background: linear-gradient(135deg, #FF331E, var(--rb-crimson-red));
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(76, 94, 130, 0.2);
+  box-shadow: 0 6px 20px rgba(255, 24, 1, 0.6);
 }

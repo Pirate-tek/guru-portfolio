@@ -18,17 +18,17 @@ const KanjiBackground = () => {
             const rotation = (Math.random() - 0.5) * 12; // -6deg to 6deg
             const swayDistance = (Math.random() - 0.5) * 100 + 'px'; // -50px to 50px
 
-            // Color variations
+            // Color variations (Red Bull Racing accents)
             const rand = Math.random();
-            let color = 'var(--color-sumi)';
-            let opacity = 0.06 + Math.random() * 0.03; // 6% to 9%
+            let color = 'var(--accent-primary)'; // Crimson Red
+            let opacity = 0.05 + Math.random() * 0.03;
 
-            if (rand > 0.95) {
-                color = 'var(--color-sakura)'; // Rare Sakura
-                opacity = 0.03 + Math.random() * 0.02;
-            } else if (rand > 0.90) {
-                color = 'var(--color-matcha)'; // Rare Matcha
-                opacity = 0.03 + Math.random() * 0.02;
+            if (rand > 0.90) {
+                color = 'var(--accent-secondary)'; // Bull Gold
+                opacity = 0.05 + Math.random() * 0.03;
+            } else if (rand > 0.80) {
+                color = 'var(--accent-tertiary)'; // Telemetry Cyan
+                opacity = 0.05 + Math.random() * 0.03;
             }
 
             const newKanji = {

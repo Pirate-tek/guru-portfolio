@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Bull F1 Variant 3 - Pit Wall Console & Carbon Fiber Cockpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pit-bg: #090D16;
+      --carbon-pattern: #0F1624;
+      --border-dark: #1E293B;
+      --red-bull-red: #FF1801;
+      --red-bull-yellow: #FFCC00;
+      --neon-cyan: #00E5FF;
+      --neon-green: #00FF66;
+      --text-white: #F8FAFC;
+      --text-gray: #64748B;
+      --font-mono: 'Share Tech Mono', monospace;
+      --font-tech: 'Rajdhani', sans-serif;
+      --font-main: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--pit-bg);
+      color: var(--text-white);
+      font-family: var(--font-main);
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(ellipse at top, rgba(15, 22, 36, 0.8) 0%, rgba(9, 13, 22, 1) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 229, 255, 0.02) 2px, rgba(0, 229, 255, 0.02) 4px);
+    }
+
+    /* Top Console Status Header */
+    .pit-console-bar {
+      background: #04060A;
+      border-bottom: 2px solid var(--red-bull-red);
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--neon-cyan);
+    }
+    .status-group { display: flex; gap: 20px; }
+    .status-item span { color: var(--red-bull-yellow); }
+
+    /* Navigation */
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 25px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-family: var(--font-tech);
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-box {
+      background: var(--red-bull-red);
+      color: #FFF;
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      font-family: var(--font-mono);
+    }
+    .menu a {
+      color: var(--text-gray);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .menu a:hover, .menu a.active {
+      color: var(--red-bull-yellow);
+    }
+
+    /* Main Console Grid */
+    .console-layout {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    .cockpit-card {
+      background: var(--carbon-pattern);
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      padding: 35px;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.8);
+      position: relative;
+    }
+    .card-corner-tag {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--neon-cyan);
+      background: rgba(0,229,255,0.08);
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(0,229,255,0.2);
+    }
+
+    .name-heading {
+      font-family: var(--font-tech);
+      font-size: 3.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .role-text {
+      font-family: var(--font-mono);
+      font-size: 1.2rem;
+      color: var(--red-bull-yellow);
+      margin-bottom: 25px;
+    }
+    .bio-text {
+      color: #CBD5E1;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    /* Control Switches & Action Buttons */
+    .cockpit-controls {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    .btn-pit-radio {
+      background: var(--red-bull-red);
+      color: #FFF;
+      font-family: var(--font-tech);
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-transform: uppercase;
+      box-shadow: 0 0 15px rgba(255,24,1,0.5);
+      transition: all 0.2s;
+    }
+    .btn-pit-radio:hover {
+      background: #E01000;
+      box-shadow: 0 0 25px rgba(255,24,1,0.8);
+    }
+
+    /* Pit Wall Radio Terminal Widget */
+    .radio-terminal {
+      background: #05080E;
+      border: 1px solid var(--border-dark);
+      border-top: 3px solid var(--red-bull-yellow);
+      border-radius: 8px;
+      padding: 20px;
+      font-family: var(--font-mono);
+    }
+    .radio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      color: var(--red-bull-yellow);
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border-dark);
+      padding-bottom: 10px;
+    }
+    .radio-log {
+      background: #020407;
+      border: 1px solid #111A2E;
+      border-radius: 4px;
+      padding: 15px;
+      height: 180px;
+      overflow-y: auto;
+      font-size: 0.85rem;
+      color: var(--neon-green);
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .radio-log p { margin-bottom: 8px; }
+    .radio-log .driver { color: var(--red-bull-red); }
+    .radio-log .engineer { color: var(--neon-cyan); }
+
+    .radio-input-box {
+      display: flex;
+      gap: 10px;
+    }
+    .radio-input {
+      background: #0A0F1A;
+      border: 1px solid var(--border-dark);
+      color: #FFF;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      padding: 8px 12px;
+      border-radius: 4px;
+      flex: 1;
+    }
+    .btn-send {
+      background: var(--neon-cyan);
+      color: #000;
+      font-family: var(--font-tech);
+      font-weight: 700;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Live Telemetry Data Meters */
+    .meters-grid {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .meter-card {
+      background: var(--carbon-pattern);
+      border: 1px solid var(--border-dark);
+      border-radius: 6px;
+      padding: 20px;
+    }
+    .meter-head {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      margin-bottom: 10px;
+    }
+    .meter-val {
+      font-family: var(--font-tech);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+    .meter-val.cyan { color: var(--neon-cyan); }
+    .meter-val.yellow { color: var(--red-bull-yellow); }
+    .meter-val.red { color: var(--red-bull-red); }
+  </style>
+</head>
+<body>
+
+  <!-- Console Header Bar -->
+  <div class="pit-console-bar">
+    <div class="status-group">
+      <div class="status-item">PIT WALL TELEMETRY // <span>ONLINE</span></div>
+      <div class="status-item">ECU CHANNEL: <span>04_RBPT</span></div>
+    </div>
+    <div>SESSION TIME: <span style="color: var(--neon-green);">01:24.089</span></div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="brand">
+      <span class="brand-box">RB</span> PIT WALL TELEMETRY
+    </div>
+    <ul class="menu">
+      <li><a href="#" class="active">// COCKPIT</a></li>
+      <li><a href="#">// TELEMETRY</a></li>
+      <li><a href="#">// PROJECTS</a></li>
+      <li><a href="#">// PIT_RADIO</a></li>
+    </ul>
+  </header>
+
+  <!-- Console Layout -->
+  <section class="console-layout">
+    <div class="cockpit-card">
+      <div class="card-corner-tag">RB-SYSTEMS v2.0</div>
+      <h1 class="name-heading">Guru Prasath A</h1>
+      <div class="role-text">> Mechatronics & Autonomous Robotics Engine</div>
+      <p class="bio-text">
+        Building high-speed autonomous navigation algorithms, C++ ROS 2 nodes, and real-time obstacle avoidance telemetry. Driven by precision engineering and high-frequency control loops.
+      </p>
+
+      <div class="cockpit-controls">
+        <button class="btn-pit-radio">Transmit Radio Comms</button>
+        <span style="font-family: var(--font-mono); color: var(--text-gray); font-size: 0.9rem;">
+          [ MODE 11 - ATTACK ENGAGED ]
+        </span>
+      </div>
+    </div>
+
+    <!-- Right Pit Radio Widget -->
+    <div class="radio-terminal">
+      <div class="radio-header">
+        <span>📻 PIT WALL RADIO TELEMETRY</span>
+        <span style="color: var(--neon-green);">● LIVE</span>
+      </div>
+      <div class="radio-log">
+        <p class="engineer">[RACE ENGINEER]: Guru, copy. Nav2 planner configuration is active.</p>
+        <p class="driver">[GURU]: Copy strategy. Path validation latency is under 5ms.</p>
+        <p class="engineer">[RACE ENGINEER]: Excellent pace. Push for sector 3 project release.</p>
+      </div>
+      <div class="radio-input-box">
+        <input type="text" class="radio-input" placeholder="Type message to Pit Wall..." value="Box this lap for deployment...">
+        <button class="btn-send">SEND</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Telemetry Meters -->
+  <section class="meters-grid">
+    <div class="meter-card">
+      <div class="meter-head">// ROS 2 LATENCY</div>
+      <div class="meter-val cyan">1.4 ms</div>
+    </div>
+    <div class="meter-card">
+      <div class="meter-head">// CONTROL FREQUENCY</div>
+      <div class="meter-val yellow">100 Hz</div>
+    </div>
+    <div class="meter-card">
+      <div class="meter-head">// PATH OPTIMALITY</div>
+      <div class="meter-val red">99.8%</div>
+    </div>
+  </section>
+
+</body>
+</html>

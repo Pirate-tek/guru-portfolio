@@ -11,24 +11,25 @@
 }
 
 .why-robotics-card {
-    /* match internship card */
     width: 100%;
-    background: var(--color-washi);
+    background: var(--card-bg);
     padding: 40px;
-    border-radius: 4px;
-    /* Slightly sharper for a technical feel, but still soft */
+    border-radius: 6px;
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.04),
-        0 1px 3px rgba(0, 0, 0, 0.02);
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        0 1px 3px rgba(0, 0, 0, 0.2);
     position: relative;
-    border-left: 4px solid var(--accent-secondary);
+    border-left: 4px solid var(--accent-primary);
+    border: 1px solid var(--border-color);
+    border-left-width: 4px;
+    border-left-color: var(--accent-primary);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     overflow: hidden;
 }
 
 .why-robotics-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(79, 93, 82, 0.1);
+    box-shadow: 0 15px 35px rgba(255, 24, 1, 0.15);
 }
 
 .why-robotics-header {
@@ -36,23 +37,23 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 25px;
-    border-bottom: 1px solid rgba(47, 51, 48, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 15px;
 }
 
 .why-robotics-title {
     font-family: var(--font-display);
-    font-size: 2rem;
-    color: var(--color-sumi);
+    font-size: 2.5rem;
+    color: var(--text-color);
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: 1px;
 }
 
 .why-robotics-icon {
     color: var(--accent-primary);
     width: 40px;
     height: 40px;
-    opacity: 0.8;
+    opacity: 0.9;
     transition: transform 0.5s ease;
 }
 
@@ -68,19 +69,19 @@
     opacity: 0.9;
 }
 
-/* Faint Kanji Background - kept subtle */
+/* Red Bull F1 Background Watermark */
 .why-robotics-card::before {
-    content: "機";
+    content: "01";
     position: absolute;
-    top: -10px;
+    top: -20px;
     right: 20px;
     font-family: var(--font-display);
-    font-size: 180px;
+    font-size: 200px;
     color: var(--accent-secondary);
-    opacity: 0.03;
+    opacity: 0.04;
     pointer-events: none;
     z-index: 0;
-    transform: rotate(10deg);
+    transform: rotate(5deg);
 }
 
 @media (min-width: 1024px) {

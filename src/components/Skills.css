@@ -17,30 +17,30 @@
 }
 
 .skill-category {
-    background-color: var(--card-bg-alt);
-    /* Matcha Green */
+    background-color: var(--card-bg);
     padding: 30px;
-    border-radius: 2px;
-    /* Washi paper texture/shadow */
-    box-shadow:
-        0 4px 6px rgba(0, 0, 0, 0.05),
-        inset 0 0 20px rgba(0, 0, 0, 0.02);
-    transition: transform 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--accent-primary);
 }
 
 .skill-category:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-secondary);
+    box-shadow: 0 10px 25px rgba(255, 204, 0, 0.15);
 }
 
 .category-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 20px;
-    color: var(--color-sumi);
-    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding-bottom: 10px;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: var(--font-display);
+    letter-spacing: 1px;
 }
 
 .skill-tags {
@@ -50,20 +50,21 @@
 }
 
 .skill-tag {
-    background-color: rgba(255, 255, 255, 0.6);
-    color: var(--color-sumi);
+    background-color: var(--rb-navy-accent);
+    color: var(--text-color);
     padding: 8px 16px;
-    border-radius: 20px;
+    border-radius: 4px;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: var(--font-tech);
     transition: all 0.3s ease;
-    border: 1px solid transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .skill-tag:hover {
-    background-color: #fff;
-    color: var(--accent-secondary);
-    /* Indigo */
-    border-color: var(--accent-secondary);
+    background-color: var(--accent-primary);
+    color: #fff;
+    border-color: var(--accent-primary);
     transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 24, 1, 0.5);
 }

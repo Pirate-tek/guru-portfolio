@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Bull F1 Variant 2 - Champion Livery & Race Cockpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Chakra+Petch:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-chassis: #050B14;
+      --carbon-card: #0D1626;
+      --redbull-crimson: #FF1801;
+      --bull-gold: #FFCC00;
+      --bull-navy-accent: #172A46;
+      --white-text: #FFFFFF;
+      --gray-text: #94A3B8;
+      --font-heading: 'Teko', sans-serif;
+      --font-tech: 'Chakra Petch', sans-serif;
+      --font-main: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--dark-chassis);
+      color: var(--white-text);
+      font-family: var(--font-main);
+      min-height: 100vh;
+      background-image: 
+        linear-gradient(135deg, rgba(255,24,1,0.06) 0%, transparent 40%),
+        linear-gradient(225deg, rgba(255,204,0,0.06) 0%, transparent 40%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23172a46' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Red Bull Livery Top Bar */
+    .livery-header {
+      height: 6px;
+      background: linear-gradient(90deg, var(--redbull-crimson) 0%, var(--bull-gold) 50%, var(--redbull-crimson) 100%);
+      box-shadow: 0 0 15px rgba(255,24,1,0.8);
+    }
+
+    /* Navigation */
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .brand-title span { color: var(--redbull-crimson); }
+    .brand-title label { color: var(--bull-gold); }
+
+    .nav-items {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      font-family: var(--font-tech);
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+    .nav-items a {
+      color: var(--gray-text);
+      text-decoration: none;
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-items a:hover { color: var(--bull-gold); }
+    .nav-items a.active { color: var(--white-text); }
+    .nav-items a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--redbull-crimson);
+      transform: skewX(-20deg);
+    }
+
+    /* Hero Banner Grid */
+    .hero-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .hero-left {
+      position: relative;
+    }
+    .driver-number {
+      font-family: var(--font-heading);
+      font-size: 6rem;
+      color: rgba(255,255,255,0.05);
+      position: absolute;
+      top: -60px;
+      left: -10px;
+      user-select: none;
+    }
+    .driver-tag {
+      display: inline-block;
+      background: var(--bull-gold);
+      color: #000;
+      font-family: var(--font-tech);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      text-transform: uppercase;
+      clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+      margin-bottom: 15px;
+    }
+    .main-heading {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+    .sub-heading {
+      font-family: var(--font-tech);
+      font-size: 1.4rem;
+      color: var(--bull-gold);
+      margin-bottom: 20px;
+    }
+    .description {
+      color: var(--gray-text);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 20px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--redbull-crimson), #C00000);
+      color: #FFF;
+      font-family: var(--font-tech);
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 14px 32px;
+      border: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+      box-shadow: 0 5px 20px rgba(255,24,1,0.5);
+      transition: all 0.2s;
+    }
+    .btn-primary:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 25px rgba(255,24,1,0.7);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--bull-navy-accent);
+      color: var(--white-text);
+      font-family: var(--font-tech);
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 12px 28px;
+      text-transform: uppercase;
+      cursor: pointer;
+      clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+      transition: border-color 0.3s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--bull-gold);
+      color: var(--bull-gold);
+    }
+
+    /* Leaderboard / Timing Table Style */
+    .leaderboard-card {
+      background: var(--carbon-card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    }
+    .table-head {
+      background: var(--bull-navy-accent);
+      padding: 15px 20px;
+      font-family: var(--font-tech);
+      font-size: 1rem;
+      color: var(--bull-gold);
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--redbull-crimson);
+    }
+    .leader-row {
+      display: grid;
+      grid-template-columns: 40px 1.5fr 1fr 1fr;
+      padding: 16px 20px;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-family: var(--font-tech);
+    }
+    .leader-row.p1 {
+      background: rgba(255, 204, 0, 0.08);
+    }
+    .pos-p1 {
+      background: var(--bull-gold);
+      color: #000;
+      font-weight: 900;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+    }
+    .pos-other {
+      background: var(--bull-navy-accent);
+      color: var(--white-text);
+      font-weight: 700;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+    }
+    .driver-name { font-size: 1.1rem; font-weight: 700; }
+    .sector-time { color: var(--redbull-crimson); font-size: 0.95rem; }
+    .status-badge {
+      background: rgba(0, 229, 255, 0.15);
+      color: #00E5FF;
+      font-size: 0.8rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    /* Projects Preview Card */
+    .projects-container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .section-title-f1 {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .section-title-f1 span { color: var(--redbull-crimson); }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+    }
+    .project-card-f1 {
+      background: var(--carbon-card);
+      border: 1px solid var(--bull-navy-accent);
+      border-radius: 6px;
+      padding: 25px;
+      position: relative;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .project-card-f1:hover {
+      transform: translateY(-5px);
+      border-color: var(--redbull-crimson);
+    }
+    .project-tag-f1 {
+      font-family: var(--font-tech);
+      font-size: 0.8rem;
+      color: var(--bull-gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .project-name-f1 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .project-desc-f1 {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .tech-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tech-pill {
+      background: var(--bull-navy-accent);
+      color: var(--white-text);
+      font-family: var(--font-tech);
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="livery-header"></div>
+
+  <!-- Navbar -->
+  <header class="nav">
+    <div class="brand-title">
+      ORACLE <span>RED BULL</span> <label>RACING</label>
+    </div>
+    <ul class="nav-items">
+      <li><a href="#" class="active">Cockpit</a></li>
+      <li><a href="#">Engineering</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero-container">
+    <div class="hero-left">
+      <div class="driver-number">01</div>
+      <div class="driver-tag">P1 CHAMPIONSHIP LEAD</div>
+      <h1 class="main-heading">Guru Prasath A</h1>
+      <div class="sub-heading">Mechatronics & Robotics Controls Specialist</div>
+      <p class="description">
+        Architecting high-performance ROS 2 navigation stacks, autonomous path planners, and robust Mechatronic control systems. Built for maximum speed, accuracy, and efficiency.
+      </p>
+      <div class="cta-group">
+        <button class="btn-primary">View Race Engineering</button>
+        <button class="btn-secondary">Pit Stop Contact</button>
+      </div>
+    </div>
+
+    <!-- Leaderboard / Stats Card -->
+    <div class="leaderboard-card">
+      <div class="table-head">
+        <span>CHAMPIONSHIP STANDINGS // ENGINEERING</span>
+        <span>STATUS: PURPLE LAP</span>
+      </div>
+      
+      <div class="leader-row p1">
+        <div class="pos-p1">1</div>
+        <div>
+          <div class="driver-name">ROS 2 Navigation Stack</div>
+          <div class="sector-time">S1: 0.012s | S2: OPTIMAL</div>
+        </div>
+        <div class="status-badge">99.2% EFFICIENCY</div>
+      </div>
+
+      <div class="leader-row">
+        <div class="pos-other">2</div>
+        <div>
+          <div class="driver-name">C++ Motion Planner</div>
+          <div class="sector-time">S1: FASTEST | S2: READY</div>
+        </div>
+        <div class="status-badge">96.5% EFFICIENCY</div>
+      </div>
+
+      <div class="leader-row">
+        <div class="pos-other">3</div>
+        <div>
+          <div class="driver-name">YOLOv11 Object Tracking</div>
+          <div class="sector-time">S1: 60 FPS | S2: TENSORRT</div>
+        </div>
+        <div class="status-badge">94.8% EFFICIENCY</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-container">
+    <h2 class="section-title-f1">FEATURED <span>RACE PROJECTS</span></h2>
+    <div class="project-grid">
+      <div class="project-card-f1">
+        <div class="project-tag-f1">CHASSIS PROJECT // 01</div>
+        <h3 class="project-name-f1">Autonomous Person Follower</h3>
+        <p class="project-desc-f1">
+          High-speed tracking system combining YOLOv11 TensorRT vision with custom ROS 2 speed controller for precise human trajectory following.
+        </p>
+        <div class="tech-pills">
+          <span class="tech-pill">ROS 2</span>
+          <span class="tech-pill">C++</span>
+          <span class="tech-pill">YOLOv11</span>
+          <span class="tech-pill">TensorRT</span>
+        </div>
+      </div>
+
+      <div class="project-card-f1">
+        <div class="project-tag-f1">TELEMETRY PROJECT // 02</div>
+        <h3 class="project-name-f1">Nav2 Path Validator</h3>
+        <p class="project-desc-f1">
+          Real-time obstacle collision checking service integrated directly into Nav2 Behavior Tree tick execution.
+        </p>
+        <div class="tech-pills">
+          <span class="tech-pill">Nav2</span>
+          <span class="tech-pill">C++17</span>
+          <span class="tech-pill">BehaviorTree.CPP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

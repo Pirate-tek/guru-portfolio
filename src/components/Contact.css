@@ -1,15 +1,9 @@
 .contact-section {
-    background: var(--bg-color);
-    /* Clean background */
-}
-
-.contact-section {
-    background-color: var(--color-rice);
+    background-color: transparent;
     padding-bottom: 100px;
 }
 
 .contact-container {
-    /* Removed grid from here */
 }
 
 .contact-content {
@@ -28,6 +22,7 @@
     color: var(--text-color);
     margin-bottom: 40px;
     line-height: 1.8;
+    opacity: 0.9;
 }
 
 .contact-details {
@@ -41,19 +36,18 @@
     align-items: center;
     gap: 15px;
     font-size: 1rem;
-    color: var(--color-sumi);
+    color: var(--text-color);
     text-decoration: none;
     transition: all 0.3s ease;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 12px;
+    border-radius: 6px;
     border: 1px solid transparent;
 }
 
 .contact-item:hover {
     color: var(--accent-secondary);
-    /* Seaweed Green */
-    background-color: rgba(79, 93, 82, 0.05);
-    border-color: rgba(79, 93, 82, 0.1);
+    background-color: rgba(23, 42, 70, 0.5);
+    border-color: rgba(255, 204, 0, 0.2);
     transform: translateX(5px);
 }
 
@@ -61,27 +55,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    background-color: rgba(26, 26, 26, 0.05);
-    color: var(--color-sumi);
-    /* Changed to Sumi (Black) */
+    background-color: var(--rb-navy-accent);
+    color: var(--accent-secondary);
     transition: all 0.3s ease;
 }
 
 .contact-item:hover .contact-icon {
-    background-color: var(--accent-secondary);
+    background-color: var(--accent-primary);
     color: #fff;
+    box-shadow: 0 0 10px rgba(255, 24, 1, 0.5);
 }
 
 .contact-form {
     background-color: var(--card-bg);
-    /* Sand */
     padding: 40px;
-    border-radius: 2px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--accent-primary);
 }
 
 .form-group {
@@ -94,8 +88,8 @@
     padding: 15px 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(26, 26, 26, 0.2);
-    color: var(--color-sumi);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
     font-size: 1rem;
     font-family: var(--font-main);
     transition: all 0.3s ease;
@@ -104,9 +98,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-bottom-color: var(--accent-secondary);
-    /* Indigo */
-    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom-color: var(--accent-primary);
+    background-color: rgba(255, 255, 255, 0.03);
     padding-left: 10px;
 }
 
@@ -118,25 +111,24 @@
 .submit-btn {
     width: 100%;
     padding: 15px;
-    background-color: var(--accent-primary);
-    /* Kuretake Red */
+    background: linear-gradient(135deg, var(--rb-crimson-red), #C00000);
     color: #fff;
     border: none;
-    border-radius: 2px;
-    font-size: 1rem;
-    font-weight: 600;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: var(--font-tech);
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    box-shadow: 0 4px 15px rgba(255, 24, 1, 0.4);
 }
 
 .submit-btn:hover {
-    background-color: var(--accent-secondary);
-    /* Seaweed Green */
+    background: linear-gradient(135deg, #FF331E, var(--rb-crimson-red));
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(79, 93, 82, 0.2);
-    box-shadow: 0 5px 15px rgba(79, 93, 82, 0.2);
+    box-shadow: 0 6px 20px rgba(255, 24, 1, 0.6);
 }
 
 .form-status {
