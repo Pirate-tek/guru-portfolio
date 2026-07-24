@@ -1,30 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap');
 
 :root {
-  /* User Custom Color Palette */
-  --deep-twilight: #03045eff;
-  --bright-teal-blue: #0077b6ff;
-  --turquoise-surf: #00b4d8ff;
-  --frosted-blue: #90e0efff;
-  --light-cyan: #caf0f8ff;
+  /* Celadon & Teal 10-Color Palette */
+  --celadon: #99e2b4ff;
+  --celadon-2: #88d4abff;
+  --mint-leaf: #78c6a3ff;
+  --mint-leaf-2: #67b99aff;
+  --seagrass: #56ab91ff;
+  --seagrass-2: #469d89ff;
+  --jungle-teal: #358f80ff;
+  --blue-spruce: #248277ff;
+  --deep-ocean: #14746fff;
+  --stormy-teal: #036666ff;
 
   /* Aliases & Legacy Theme Mappings */
-  --color-sumi: var(--deep-twilight);
-  --color-rice: var(--light-cyan);
-  --color-matcha: var(--bright-teal-blue);
-  --color-seaweed: var(--turquoise-surf);
-  --color-moss: var(--frosted-blue);
-  --color-washi: var(--frosted-blue);
+  --color-sumi: var(--stormy-teal);
+  --color-rice: var(--celadon);
+  --color-matcha: var(--blue-spruce);
+  --color-seaweed: var(--seagrass-2);
+  --color-moss: var(--mint-leaf);
+  --color-washi: var(--celadon-2);
 
   /* Functional Mappings */
-  --bg-color: var(--light-cyan);
-  --text-color: var(--deep-twilight);
-  --accent-primary: var(--bright-teal-blue);
-  --accent-secondary: var(--turquoise-surf);
-  --accent-tertiary: var(--frosted-blue);
+  --bg-color: var(--celadon);
+  --text-color: var(--stormy-teal);
+  --accent-primary: var(--blue-spruce);
+  --accent-secondary: var(--seagrass-2);
+  --accent-tertiary: var(--mint-leaf);
   --card-bg: #FFFFFF;
-  --card-bg-alt: var(--frosted-blue);
-  --border-color: rgba(3, 4, 94, 0.15);
+  --card-bg-alt: var(--celadon-2);
+  --border-color: rgba(3, 102, 102, 0.15);
 
   /* Typography */
   --font-main: 'Inter', sans-serif;
@@ -38,14 +43,41 @@
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: var(--celadon);
+  /* Organic smudged interconnected gradient mesh combining all teal-celadon tones */
+  background-image: 
+    radial-gradient(at 15% 15%, #99e2b4ff 0px, transparent 55%),
+    radial-gradient(at 85% 10%, #78c6a3ff 0px, transparent 50%),
+    radial-gradient(at 50% 45%, #67b99aff 0px, transparent 60%),
+    radial-gradient(at 10% 75%, #469d89ff 0px, transparent 55%),
+    radial-gradient(at 90% 85%, #248277ff 0px, transparent 50%),
+    radial-gradient(at 50% 95%, #99e2b4ff 0px, transparent 55%),
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-attachment: fixed;
   color: var(--text-color);
   font-family: var(--font-main);
   line-height: 1.6;
   overflow-x: hidden;
   transition: background-color 0.5s ease, color 0.5s ease;
-  /* Subtle paper texture effect */
-  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Smudged Gradient Text Utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--stormy-teal) 0%, var(--blue-spruce) 45%, var(--jungle-teal) 70%, var(--seagrass-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Connected Glassmorphic Container Utility */
+.connected-glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(86, 171, 145, 0.3);
+  box-shadow: 
+    0 10px 30px -5px rgba(3, 102, 102, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 h1,
