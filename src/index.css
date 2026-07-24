@@ -1,31 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap');
 
 :root {
-  /* Japanese Green Color Palette */
-  --color-sumi: #2F3330;
-  /* Dark Charcoal / Text */
-  --color-rice: #F0F2E9;
-  /* Warm light green-white / Background */
-  --color-matcha: #8A9A5B;
-  /* Primary Green */
-  --color-seaweed: #4F5D52;
-  /* Secondary Dark Green / Accents */
-  --color-moss: #D4D9C8;
-  /* Light Moss / Subtle Highlights */
-  --color-washi: #E6E8E0;
-  /* Textured Paper Tone */
-  --color-clay: #8C7060;
-  /* Warm Earthy Accent (optional) */
+  /* User Custom Color Palette */
+  --deep-twilight: #03045eff;
+  --bright-teal-blue: #0077b6ff;
+  --turquoise-surf: #00b4d8ff;
+  --frosted-blue: #90e0efff;
+  --light-cyan: #caf0f8ff;
+
+  /* Aliases & Legacy Theme Mappings */
+  --color-sumi: var(--deep-twilight);
+  --color-rice: var(--light-cyan);
+  --color-matcha: var(--bright-teal-blue);
+  --color-seaweed: var(--turquoise-surf);
+  --color-moss: var(--frosted-blue);
+  --color-washi: var(--frosted-blue);
 
   /* Functional Mappings */
-  --bg-color: var(--color-rice);
-  --text-color: var(--color-sumi);
-  --accent-primary: var(--color-matcha);
-  --accent-secondary: var(--color-seaweed);
-  --accent-tertiary: var(--color-moss);
+  --bg-color: var(--light-cyan);
+  --text-color: var(--deep-twilight);
+  --accent-primary: var(--bright-teal-blue);
+  --accent-secondary: var(--turquoise-surf);
+  --accent-tertiary: var(--frosted-blue);
   --card-bg: #FFFFFF;
-  --card-bg-alt: var(--color-washi);
-  --border-color: rgba(47, 51, 48, 0.1);
+  --card-bg-alt: var(--frosted-blue);
+  --border-color: rgba(3, 4, 94, 0.15);
 
   /* Typography */
   --font-main: 'Inter', sans-serif;
