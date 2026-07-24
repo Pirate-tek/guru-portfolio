@@ -1,35 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap');
 
 :root {
-  /* Celadon & Teal 10-Color Palette */
-  --celadon: #99e2b4ff;
-  --celadon-2: #88d4abff;
-  --mint-leaf: #78c6a3ff;
-  --mint-leaf-2: #67b99aff;
-  --seagrass: #56ab91ff;
-  --seagrass-2: #469d89ff;
-  --jungle-teal: #358f80ff;
-  --blue-spruce: #248277ff;
-  --deep-ocean: #14746fff;
-  --stormy-teal: #036666ff;
+  /* Pearl Aqua Palette Family */
+  --pearl-aqua: #79d8c6;
+  --pearl-aqua-100: #0f342d;
+  --pearl-aqua-200: #1e685b;
+  --pearl-aqua-300: #2d9d88;
+  --pearl-aqua-400: #44c9b1;
+  --pearl-aqua-500: #79d8c6;
+  --pearl-aqua-600: #93e0d2;
+  --pearl-aqua-700: #aee8dd;
+  --pearl-aqua-800: #c9efe8;
+  --pearl-aqua-900: #e4f7f4;
+
+  --pearl-aqua-alt1: #85dbce;
+  --pearl-aqua-alt2: #90dfd6;
+  --pearl-aqua-alt3: #9ce2db;
+  --pearl-aqua-alt4: #a3e6e1;
+
+  /* Icy Aqua Palette Family */
+  --icy-aqua: #afe9e7;
+  --icy-aqua-100: #12403f;
+  --icy-aqua-200: #23807d;
+  --icy-aqua-300: #35c0bc;
+  --icy-aqua-400: #6fd8d4;
+  --icy-aqua-500: #afe9e7;
+  --icy-aqua-600: #bfedec;
+  --icy-aqua-700: #cff2f1;
+  --icy-aqua-800: #dff6f5;
+  --icy-aqua-900: #effbfa;
+
+  --icy-aqua-alt1: #b7ebeb;
+  --icy-aqua-alt2: #baebed;
+
+  /* Light Cyan & Frozen Water Palette Family */
+  --light-cyan: #c2ecef;
+  --light-cyan-100: #124144;
+  --light-cyan-200: #248289;
+  --light-cyan-300: #3ac1cb;
+  --light-cyan-400: #7ed6dd;
+
+  --frozen-water: #c6eff1;
+  --frozen-water-100: #114447;
+  --frozen-water-200: #22888d;
+  --frozen-water-300: #38c7cf;
+  --frozen-water-400: #7fdbe0;
 
   /* Aliases & Legacy Theme Mappings */
-  --color-sumi: var(--stormy-teal);
-  --color-rice: var(--celadon);
-  --color-matcha: var(--blue-spruce);
-  --color-seaweed: var(--seagrass-2);
-  --color-moss: var(--mint-leaf);
-  --color-washi: var(--celadon-2);
+  --color-sumi: var(--pearl-aqua-100);
+  --color-rice: var(--icy-aqua-900);
+  --color-matcha: var(--pearl-aqua-200);
+  --color-seaweed: var(--pearl-aqua-300);
+  --color-moss: var(--pearl-aqua-400);
+  --color-washi: var(--icy-aqua-800);
 
   /* Functional Mappings */
-  --bg-color: var(--celadon);
-  --text-color: var(--stormy-teal);
-  --accent-primary: var(--blue-spruce);
-  --accent-secondary: var(--seagrass-2);
-  --accent-tertiary: var(--mint-leaf);
+  --bg-color: var(--light-cyan);
+  --text-color: var(--pearl-aqua-100);
+  --accent-primary: var(--pearl-aqua-200);
+  --accent-secondary: var(--pearl-aqua-300);
+  --accent-tertiary: var(--pearl-aqua-400);
   --card-bg: #FFFFFF;
-  --card-bg-alt: var(--celadon-2);
-  --border-color: rgba(3, 102, 102, 0.15);
+  --card-bg-alt: var(--icy-aqua-800);
+  --border-color: rgba(15, 52, 45, 0.15);
 
   /* Typography */
   --font-main: 'Inter', sans-serif;
@@ -43,15 +76,15 @@
 }
 
 body {
-  background-color: var(--celadon);
-  /* Organic smudged interconnected gradient mesh combining all teal-celadon tones */
+  background-color: var(--light-cyan);
+  /* Organic smudged interconnected gradient mesh combining Pearl Aqua, Icy Aqua, Light Cyan, and Deep Aqua tones */
   background-image: 
-    radial-gradient(at 15% 15%, #99e2b4ff 0px, transparent 55%),
-    radial-gradient(at 85% 10%, #78c6a3ff 0px, transparent 50%),
-    radial-gradient(at 50% 45%, #67b99aff 0px, transparent 60%),
-    radial-gradient(at 10% 75%, #469d89ff 0px, transparent 55%),
-    radial-gradient(at 90% 85%, #248277ff 0px, transparent 50%),
-    radial-gradient(at 50% 95%, #99e2b4ff 0px, transparent 55%),
+    radial-gradient(at 15% 15%, #79d8c6 0px, transparent 55%),
+    radial-gradient(at 85% 10%, #afe9e7 0px, transparent 50%),
+    radial-gradient(at 50% 45%, #90dfd6 0px, transparent 60%),
+    radial-gradient(at 10% 75%, #44c9b1 0px, transparent 55%),
+    radial-gradient(at 90% 85%, #2d9d88 0px, transparent 50%),
+    radial-gradient(at 50% 95%, #c6eff1 0px, transparent 55%),
     url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   background-attachment: fixed;
   color: var(--text-color);
@@ -63,7 +96,7 @@ body {
 
 /* Smudged Gradient Text Utility */
 .gradient-text {
-  background: linear-gradient(135deg, var(--stormy-teal) 0%, var(--blue-spruce) 45%, var(--jungle-teal) 70%, var(--seagrass-2) 100%);
+  background: linear-gradient(135deg, var(--pearl-aqua-100) 0%, var(--pearl-aqua-200) 45%, var(--pearl-aqua-300) 70%, var(--pearl-aqua-400) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
