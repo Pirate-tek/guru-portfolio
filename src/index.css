@@ -1,68 +1,78 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap');
 
 :root {
-  /* Pearl Aqua Palette Family */
-  --pearl-aqua: #79d8c6;
-  --pearl-aqua-100: #0f342d;
-  --pearl-aqua-200: #1e685b;
-  --pearl-aqua-300: #2d9d88;
-  --pearl-aqua-400: #44c9b1;
-  --pearl-aqua-500: #79d8c6;
-  --pearl-aqua-600: #93e0d2;
-  --pearl-aqua-700: #aee8dd;
-  --pearl-aqua-800: #c9efe8;
-  --pearl-aqua-900: #e4f7f4;
+  /* Ocean Breeze Theme Family */
+  --porcelain: #fffffa;
+  --porcelain-100: #656500;
+  --porcelain-200: #caca00;
+  --porcelain-300: #ffff30;
+  --porcelain-400: #ffff95;
+  --porcelain-500: #fffffa;
+  --porcelain-600: #fffffb;
+  --porcelain-700: #fffffc;
+  --porcelain-800: #fffffd;
+  --porcelain-900: #fffffe;
 
-  --pearl-aqua-alt1: #85dbce;
-  --pearl-aqua-alt2: #90dfd6;
-  --pearl-aqua-alt3: #9ce2db;
-  --pearl-aqua-alt4: #a3e6e1;
+  --stormy-teal: #0d5c63;
+  --stormy-teal-100: #031214;
+  --stormy-teal-200: #052528;
+  --stormy-teal-300: #08373c;
+  --stormy-teal-400: #0a4a4f;
+  --stormy-teal-500: #0d5c63;
+  --stormy-teal-600: #169daa;
+  --stormy-teal-700: #2cd4e4;
+  --stormy-teal-800: #72e2ed;
+  --stormy-teal-900: #b9f1f6;
 
-  /* Icy Aqua Palette Family */
-  --icy-aqua: #afe9e7;
-  --icy-aqua-100: #12403f;
-  --icy-aqua-200: #23807d;
-  --icy-aqua-300: #35c0bc;
-  --icy-aqua-400: #6fd8d4;
-  --icy-aqua-500: #afe9e7;
-  --icy-aqua-600: #bfedec;
-  --icy-aqua-700: #cff2f1;
-  --icy-aqua-800: #dff6f5;
-  --icy-aqua-900: #effbfa;
+  --tropical-teal: #44a1a0;
+  --tropical-teal-100: #0e2020;
+  --tropical-teal-200: #1b4140;
+  --tropical-teal-300: #296160;
+  --tropical-teal-400: #368180;
+  --tropical-teal-500: #44a1a0;
+  --tropical-teal-600: #61bdbb;
+  --tropical-teal-700: #88cdcc;
+  --tropical-teal-800: #b0dedd;
+  --tropical-teal-900: #d7eeee;
 
-  --icy-aqua-alt1: #b7ebeb;
-  --icy-aqua-alt2: #baebed;
+  --pearl-aqua: #78cdd7;
+  --pearl-aqua-100: #0f3034;
+  --pearl-aqua-200: #1f6068;
+  --pearl-aqua-300: #2e919c;
+  --pearl-aqua-400: #46bbc8;
+  --pearl-aqua-500: #78cdd7;
+  --pearl-aqua-600: #94d8df;
+  --pearl-aqua-700: #afe1e7;
+  --pearl-aqua-800: #caebef;
+  --pearl-aqua-900: #e4f5f7;
 
-  /* Light Cyan & Frozen Water Palette Family */
-  --light-cyan: #c2ecef;
-  --light-cyan-100: #124144;
-  --light-cyan-200: #248289;
-  --light-cyan-300: #3ac1cb;
-  --light-cyan-400: #7ed6dd;
+  --ocean-teal: #247b7b;
+  --ocean-teal-100: #071919;
+  --ocean-teal-200: #0e3131;
+  --ocean-teal-300: #154a4a;
+  --ocean-teal-400: #1c6262;
+  --ocean-teal-500: #247b7b;
+  --ocean-teal-600: #33b1b1;
+  --ocean-teal-700: #5bcfcf;
+  --ocean-teal-800: #92dfdf;
+  --ocean-teal-900: #c8efef;
 
-  --frozen-water: #c6eff1;
-  --frozen-water-100: #114447;
-  --frozen-water-200: #22888d;
-  --frozen-water-300: #38c7cf;
-  --frozen-water-400: #7fdbe0;
+  /* Aliases & Functional Theme Mappings */
+  --color-sumi: var(--stormy-teal-100);
+  --color-rice: var(--pearl-aqua-900);
+  --color-matcha: var(--stormy-teal-500);
+  --color-seaweed: var(--tropical-teal-500);
+  --color-moss: var(--pearl-aqua-500);
+  --color-washi: var(--tropical-teal-900);
 
-  /* Aliases & Legacy Theme Mappings */
-  --color-sumi: var(--pearl-aqua-100);
-  --color-rice: var(--icy-aqua-900);
-  --color-matcha: var(--pearl-aqua-200);
-  --color-seaweed: var(--pearl-aqua-300);
-  --color-moss: var(--pearl-aqua-400);
-  --color-washi: var(--icy-aqua-800);
-
-  /* Functional Mappings */
-  --bg-color: var(--light-cyan);
-  --text-color: var(--pearl-aqua-100);
-  --accent-primary: var(--pearl-aqua-200);
-  --accent-secondary: var(--pearl-aqua-300);
-  --accent-tertiary: var(--pearl-aqua-400);
-  --card-bg: #FFFFFF;
-  --card-bg-alt: var(--icy-aqua-800);
-  --border-color: rgba(15, 52, 45, 0.15);
+  --bg-color: var(--pearl-aqua-900);
+  --text-color: var(--stormy-teal-100);
+  --accent-primary: var(--stormy-teal-500);
+  --accent-secondary: var(--tropical-teal-500);
+  --accent-tertiary: var(--pearl-aqua-500);
+  --card-bg: var(--porcelain);
+  --card-bg-alt: var(--pearl-aqua-900);
+  --border-color: rgba(13, 92, 99, 0.15);
 
   /* Typography */
   --font-main: 'Inter', sans-serif;
@@ -76,15 +86,15 @@
 }
 
 body {
-  background-color: var(--light-cyan);
-  /* Organic smudged interconnected gradient mesh combining Pearl Aqua, Icy Aqua, Light Cyan, and Deep Aqua tones */
+  background-color: var(--pearl-aqua-900);
+  /* Ocean Breeze smudged interconnected gradient mesh */
   background-image: 
-    radial-gradient(at 15% 15%, #79d8c6 0px, transparent 55%),
-    radial-gradient(at 85% 10%, #afe9e7 0px, transparent 50%),
-    radial-gradient(at 50% 45%, #90dfd6 0px, transparent 60%),
-    radial-gradient(at 10% 75%, #44c9b1 0px, transparent 55%),
-    radial-gradient(at 90% 85%, #2d9d88 0px, transparent 50%),
-    radial-gradient(at 50% 95%, #c6eff1 0px, transparent 55%),
+    radial-gradient(at 12% 15%, #e4f5f7 0px, transparent 55%),
+    radial-gradient(at 88% 12%, #d7eeee 0px, transparent 50%),
+    radial-gradient(at 50% 45%, #78cdd7 0px, transparent 60%),
+    radial-gradient(at 10% 75%, #44a1a0 0px, transparent 55%),
+    radial-gradient(at 90% 85%, #2cd4e4 0px, transparent 50%),
+    radial-gradient(at 50% 95%, #fffffa 0px, transparent 55%),
     url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   background-attachment: fixed;
   color: var(--text-color);
@@ -96,7 +106,7 @@ body {
 
 /* Smudged Gradient Text Utility */
 .gradient-text {
-  background: linear-gradient(135deg, var(--pearl-aqua-100) 0%, var(--pearl-aqua-200) 45%, var(--pearl-aqua-300) 70%, var(--pearl-aqua-400) 100%);
+  background: linear-gradient(135deg, var(--stormy-teal-100) 0%, var(--stormy-teal-500) 45%, var(--tropical-teal-500) 70%, var(--pearl-aqua-300) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
