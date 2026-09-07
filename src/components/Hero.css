@@ -69,10 +69,6 @@
     /* More traditional feel for philosophy */
 }
 
-.hero-philosophy + .hero-philosophy {
-    margin-top: 12px;
-}
-
 .hero-actions {
     display: flex;
     gap: 20px;

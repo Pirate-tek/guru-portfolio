@@ -4,6 +4,12 @@ import './Blog.css';
 const Blog = () => {
     const blogs = [
         {
+            title: 'Never let yourself attached to something that stops you pursuing your greater goals of life',
+            date: 'Sep 7th 2026',
+            category: 'Personal',
+            excerpt: 'Stay focused on your true path......'
+        },
+        {
             title: 'The ability to ask right questions will leads to actual progress',
             date: 'Jan 3rd 2026',
             category: 'Personal',
