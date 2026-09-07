@@ -16,6 +16,9 @@ const Hero = () => {
                         <p className="hero-philosophy">
                             "Life is driven by desires and goals!!"
                         </p>
+                        <p className="hero-philosophy">
+                            "Never let yourself attached to something that stops you pursuing your greater goals of life"
+                        </p>
                     </div>
                     <div className="hero-actions">
                         <a href="#projects" className="btn">View My Work</a>
